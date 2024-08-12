@@ -1,0 +1,6 @@
+.post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two posts per row */
+    gap: 20px;
+    padding: 20px;
+}
