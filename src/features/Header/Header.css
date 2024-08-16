@@ -16,11 +16,10 @@
 }
 
 .logo:hover {
-    color: #a85f33; /* A cozy, warm color on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    color: #a85f33; 
+    transform: scale(1.05); 
 }
 
-/* Styling for the search form */
 .search {
     display: flex;
     align-items: center;
@@ -43,5 +42,5 @@
 }
 
 .search button:hover {
-    background-color: #ccc; /* Darker background color on hover */
+    background-color: #ccc;
 }

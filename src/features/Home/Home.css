@@ -1,0 +1,120 @@
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f0e1; 
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe5d9; 
+    color: #a94442; 
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  .error button {
+    background-color: #8d6e63; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .error button:hover {
+    background-color: #6d4c41; 
+  }
+  
+  .post-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .post-loading-container > * {
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #3e2723; 
+  }
+  
+  .post-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #3e2723;
+  }
+  
+  .post-wrapper {
+    background-color: #fff7e6; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .icon-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .icon-action-button:hover {
+    transform: scale(1.1); 
+  }
+  
+  .icon-action {
+    color: #795548; 
+    font-size: 1.5rem;
+  }
+  
+  .up-vote.active .icon-action,
+  .down-vote.active .icon-action {
+    color: #ff7043; 
+  }
+  
+  .post-votes-value {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 1.1rem;
+    color: #6d4c41;
+    margin: 5px 0;
+  }
+  
+  .post-comments-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .post-comments-container .icon-action-button {
+    margin-right: 8px;
+  }
+  
+  .post-comments-container .icon-action {
+    font-size: 1.3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .posts-container {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+  
+    .post-wrapper {
+      padding: 10px;
+    }
+  }
+  
