@@ -1,32 +1,106 @@
-.post-container {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.post-container:hover {
-    transform: scale(1.02);
-}
-
-.post-title {
-    font-size: 20px;
-    font-weight: bold;
+.post {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff7e6; 
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .post-title {
+    font-family: 'Georgia', serif; 
+    font-size: 1.4rem;
+    color: #3e2723; 
     margin-bottom: 10px;
-    color: #333;
-}
+  }
 
-.post-content {
-    font-size: 16px;
-    color: #555;
-}
-
-.post-meta {
-    font-size: 12px;
-    color: #888;
+  .post-image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .post-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #6d4c41; 
+  }
+  
+  .post-votes {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .upvotes, .downvotes {
+    font-family: 'Courier New', Courier, monospace; 
+    color: #795548; 
+  }
+  
+  .post-author {
+    font-style: italic;
+    color: #8d6e63; 
+    margin-right: 10px;
+  }
+  
+  .post-time {
+    color: #8d6e63;
+  }
+  
+  .post-comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .comment-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6d4c41; 
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .comment-toggle-button:hover,
+  .comment-toggle-button.active {
+    color: #ff7043; 
+  }
+  
+  .comments-section {
     margin-top: 15px;
-    text-align: right;
-}
+    padding: 10px;
+    background-color: #f5f0e1; 
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .post {
+      padding: 10px;
+    }
+  
+    .post-title {
+      font-size: 1.2rem;
+    }
+  
+    .post-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
