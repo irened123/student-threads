@@ -1,0 +1,43 @@
+.comment {
+    background-color: #f9f6f1;
+    border-radius: 8px; 
+    padding: 12px; 
+    margin-bottom: 16px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-family: 'Roboto', sans-serif; 
+  }
+  
+  .comment-metadata {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px; 
+    color: #6b5b53; 
+    font-size: 0.9em; 
+  }
+  
+  .comment-author {
+    font-weight: bold;
+  }
+  
+  .comment-time {
+    font-style: italic;
+  }
+  
+  .comment-body {
+    color: #3c3c3c; 
+    line-height: 1.6; 
+  }
+  
+  .comment-body p {
+    margin: 0; 
+  }
+  
+  .comment-body a {
+    color: #b06c49; 
+    text-decoration: none;
+  }
+  
+  .comment-body a:hover {
+    text-decoration: underline;
+  }
+  
