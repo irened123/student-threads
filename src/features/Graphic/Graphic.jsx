@@ -1,6 +1,6 @@
 import React from 'react';
 import './Graphic.css';
-import cozyImage from '../../assets/cozy-coffee-shop.jpg'; // Replace with your image path
+import cozyImage from '../../assets/cozy-coffee-shop.jpg'; 
 
 const Graphic = () => {
   return (
