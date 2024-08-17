@@ -2,7 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getSubreddits } from '../api/reddit';
 
 const initialState = {
-  subreddits: [],
+  subreddits: [
+    { id: 1, url: 'r/college', display_name: 'r/college' },
+    { id: 2, url: 'r/CollegeLife', display_name: 'r/CollegeLife' },
+    { id: 3, url: 'r/CollegeCooking', display_name: 'r/CollegeCooking' },
+    { id: 4, url: 'r/productivity', display_name: 'r/productivity' },
+    { id: 5, url: 'r/CollegeHumor', display_name: 'r/CollegeHumor' }
+  ],
   error: false,
   isLoading: false,
 };
@@ -33,16 +39,5 @@ export const {
 } = subRedditSlice.actions;
 
 export default subRedditSlice.reducer;
-
-// This is a Redux Thunk that gets subreddits.
-export const fetchSubreddits = () => async (dispatch) => {
-  try {
-    dispatch(startGetSubreddits());
-    const subreddits = await getSubreddits();
-    dispatch(getSubredditsSuccess(subreddits));
-  } catch (error) {
-    dispatch(getSubredditsFailed());
-  }
-};
 
 export const selectSubreddits = (state) => state.subreddits.subreddits;
