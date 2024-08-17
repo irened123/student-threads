@@ -36,6 +36,10 @@ const Post = ({ post, onToggleComments }) => {
     return null;
   };
 
+  if (!post) {
+    return <div>Post data is not available.</div>; 
+  }
+
   return (
     <article className="post" key={post.id}>
       <Card>
