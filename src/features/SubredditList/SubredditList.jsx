@@ -1,18 +1,27 @@
 import React from 'react';
 import './SubredditList.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSubreddits } from '../../store/subRedditSlice';
+import { selectSelectedSubreddit, setSelectedSubreddit, fetchPosts } from '../../store/redditSlice';
 
-const SubredditList = ({ setSelectedSubreddit }) => {  // Receive setSelectedSubreddit as a prop
-    const subreddits = ['r/college', 'r/CollegeLife', 'r/CollegeCooking', 'r/productivity', 'r/CollegeHumor'];
+const SubredditList = () => {  // Receive setSelectedSubreddit as a prop
+    const dispatch = useDispatch();
+    const subreddits = useSelector(selectSubreddits);
+    const selectedSubreddit = useSelector(state => state.reddit.selectedSubreddit);
 
     return (
         <div className="subreddit-list-container">
-            {subreddits.map((subreddit, index) => (
+            {subreddits.map((subreddit) => (
                 <button 
-                    key={index} 
-                    className="subreddit-link"
-                    onClick={() => setSelectedSubreddit(subreddit)} // Update parent state on click
+                    key={subreddit.id} 
+                    className={`subreddit-link ${selectedSubreddit === subreddit.url ? 'active' : ''}`}
+                    onClick={() => {
+                        console.log("clicking button");
+                        dispatch(setSelectedSubreddit(subreddit.url));
+                        dispatch(fetchPosts(subreddit.url));
+                    }} 
                 >
-                    {subreddit}
+                    {subreddit.display_name}
                 </button>
             ))}
         </div>
@@ -20,4 +29,5 @@ const SubredditList = ({ setSelectedSubreddit }) => {  // Receive setSelectedSub
 };
 
 export default SubredditList;
+
 
