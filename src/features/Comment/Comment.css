@@ -5,6 +5,8 @@
     margin-bottom: 16px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     font-family: 'Roboto', sans-serif; 
+    overflow: hidden; /* Prevents content from overflowing the comment box */
+    word-wrap: break-word; /* Ensures long words or URLs break to the next line */
   }
   
   .comment-metadata {
