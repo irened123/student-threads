@@ -1,0 +1,72 @@
+.post {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff7e6; 
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .post-votes {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .upvotes,
+  .downvotes {
+    font-family: 'Courier New', Courier, monospace;
+    color: #795548; 
+  }
+  
+  .post-title {
+    margin-bottom: 10px;
+  }
+  
+  .post-image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .post-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #6d4c41; 
+  }
+  
+  .post-comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .icon-action {
+    color: #6d4c41; 
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .post {
+      padding: 10px;
+    }
+  
+    .post-title {
+      font-size: 1.2rem;
+    }
+  
+    .post-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
