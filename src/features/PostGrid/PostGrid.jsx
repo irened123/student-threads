@@ -1,8 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './PostGrid.css';
 import Post from '../Post/Post';
+import { selectFilteredPosts, selectSelectedSubreddit } from '../../store/redditSlice';
 
-const PostGrid = ({ posts, selectedSubreddit }) => {
+const PostGrid = () => {
+    // Use useSelector to get the necessary data from Redux store
+    const posts = useSelector(selectFilteredPosts);
+    const selectedSubreddit = useSelector(selectSelectedSubreddit);
+    
     if (!selectedSubreddit) {
         return null; // Don't render anything if no subreddit is selected
     }
@@ -12,10 +18,7 @@ const PostGrid = ({ posts, selectedSubreddit }) => {
             {posts.map((post, index) => (
                 <Post 
                     key={index}
-                    title={post.title}
-                    content={post.content}
-                    author={post.author}
-                    date={post.date}
+                    post={post}
                 />
             ))}
         </div>
