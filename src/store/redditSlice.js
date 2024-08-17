@@ -6,11 +6,11 @@ const initialState = {
   error: false,
   isLoading: false,
   searchTerm: '',
-  selectedSubreddit: '/r/pics/',
+  selectedSubreddit: '',  
 };
 
 const redditSlice = createSlice({
-  name: 'redditPosts',
+  name: 'redditPosts', 
   initialState,
   reducers: {
     setPosts(state, action) {
@@ -32,8 +32,11 @@ const redditSlice = createSlice({
       state.searchTerm = action.payload;
     },
     setSelectedSubreddit(state, action) {
+      console.log("begin selectedSubreddit");
       state.selectedSubreddit = action.payload;
       state.searchTerm = '';
+      console.log("end selectedSubreddit");
+      console.log(state, action);
     },
     toggleShowingComments(state, action) {
       state.posts[action.payload].showingComments = !state.posts[action.payload]
