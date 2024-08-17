@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import Header from './features/Header/Header';
 import SubredditList from './features/SubredditList/SubredditList';
@@ -6,25 +7,22 @@ import WelcomeMessage from './features/WelcomeMessage/WelcomeMessage';
 import AboutSection from './features/AboutSection/AboutSection';
 import Graphic from './features/Graphic/Graphic';
 import PostGrid from './features/PostGrid/PostGrid'; 
+import { selectSelectedSubreddit, setSelectedSubreddit } from './store/redditSlice';
 
 function App() {
-  const [selectedSubreddit, setSelectedSubreddit] = useState(null);
+  const dispatch = useDispatch();
+  const selectedSubreddit = useSelector(selectSelectedSubreddit);
 
   const handleLogoClick = () => {
-    setSelectedSubreddit(null); // Reset the selected subreddit to null to return to the home page
-  };
-
-  const posts = [
-      { title: 'Welcome to StudentThreads!', content: 'This is your cozy corner...', author: 'Admin', date: '2024-08-10' },
-      { title: 'Study Group Forming!', content: 'Looking for students to join...', author: 'John Doe', date: '2024-08-09' },
-  ];
-
+    dispatch(setSelectedSubreddit(null)); 
+  }
+  
   return (
     <Router>
       <div className="App">
         <Header onLogoClick={handleLogoClick} />
         <nav>
-          <SubredditList setSelectedSubreddit={setSelectedSubreddit} />
+          <SubredditList />
         </nav>
         <main>
           {!selectedSubreddit && (
@@ -34,7 +32,7 @@ function App() {
               <Graphic />
             </>
           )}
-          {selectedSubreddit && <PostGrid posts={posts} selectedSubreddit={selectedSubreddit} />}
+          {selectedSubreddit && <PostGrid selectedSubreddit={selectedSubreddit} />}
         </main>
       </div>
     </Router>
