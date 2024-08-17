@@ -8,25 +8,51 @@ import Comment from "../Comment/Comment";
 
 const Post = ({ post, onToggleComments }) => {
   const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState([]); // To store the fetched comments
+  const [loadingComments, setLoadingComments] = useState(false); 
+  const [errorComments, setErrorComments] = useState(false); 
 
-  const handleToggleComments = () => {
+  const handleToggleComments = async () => {
     setShowComments(!showComments);
-    onToggleComments(post.permalink);
+
+    // If we're already showing comments, don't fetch them again
+    if (showComments || comments.length > 0) return;
+
+    setLoadingComments(true);
+    setErrorComments(false);
+
+    try {
+      const response = await fetch(`https://www.reddit.com${post.permalink}.json`);
+      const json = await response.json();
+      console.log("API response:", json); 
+      // Extract comments from the response, taking only the first 5
+      const topFiveComments = json[1].data.children.slice(0, 5).map(comment => comment.data);
+      console.log("Top five comments:", topFiveComments); 
+      setComments(topFiveComments);
+      console.log("Top five comments:", JSON.stringify(topFiveComments, null, 2));
+    } catch (error) {
+      console.error("Failed to load comments:", error);
+      setErrorComments(true);
+    } finally {
+      setLoadingComments(false);
+    }
   };
 
   const renderComments = () => {
-    if (post.loadingComments) {
+    console.log("Rendering these comments:", comments);
+    if (loadingComments) {
       return <p>Loading comments...</p>;
     }
 
-    if (post.errorComments) {
+    if (errorComments) {
       return <p>Error loading comments.</p>;
     }
 
-    if (showComments && post.comments) {
+    if (showComments && comments.length > 0) {
+      console.log("Mapping comments to Comment components");
       return (
         <div className="comments-section">
-          {post.comments.map((comment) => (
+          {comments.map((comment) => (
             <Comment key={comment.id} comment={comment} />
           ))}
         </div>
