@@ -5,7 +5,7 @@ const initialState = {
   subreddits: [
     { id: 1, url: 'r/college', display_name: 'r/college' },
     { id: 2, url: 'r/CollegeLife', display_name: 'r/CollegeLife' },
-    { id: 3, url: 'r/CollegeCooking', display_name: 'r/CollegeCooking' },
+    { id: 3, url: 'r/sunset', display_name: 'r/sunset' },
     { id: 4, url: 'r/productivity', display_name: 'r/productivity' },
     { id: 5, url: 'r/CollegeHumor', display_name: 'r/CollegeHumor' }
   ],
