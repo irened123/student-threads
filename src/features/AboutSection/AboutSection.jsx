@@ -10,7 +10,7 @@ const AboutSection = () => {
         <p>Here’s what you’ll find:</p>
         <ul>
           <li><strong>r/college:</strong> Navigate college life with advice, tips, and shared experiences from fellow students.</li>
-          <li><strong>r/CollegeLife:</strong> Explore the fun, challenges, and daily happenings of student life.</li>
+          <li><strong>r/StudyTips:</strong> Improve your study habits and academic performance with practical tips and strategies.</li>
           <li><strong>r/sunset:</strong> Take a moment to unwind with beautiful sunset photos, perfect for a relaxing break from your studies.
 </li>
           <li><strong>r/productivity:</strong> Get motivated with study tips, time management hacks, and more.</li>
