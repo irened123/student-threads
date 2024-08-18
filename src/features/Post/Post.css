@@ -59,12 +59,17 @@
   
   .post-time {
     color: #8d6e63;
+    margin-right: 10px; 
   }
   
   .post-comments {
     display: flex;
     align-items: center;
     gap: 5px;
+  }
+
+  .downvotes {
+    margin-right: 10px; 
   }
   
   .comment-toggle-button {
@@ -80,13 +85,19 @@
   .comment-toggle-button.active {
     color: #ff7043; 
   }
-  
+
   .comments-section {
     margin-top: 15px;
     padding: 10px;
     background-color: #f5f0e1; 
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    word-break: break-word;
+    overflow-wrap: break-word; 
+  }
+
+  .post-comments .comment-toggle-button .icon-action {
+    margin-right: 2px; /* Adjust this value */
   }
   
   @media (max-width: 768px) {
