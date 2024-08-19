@@ -125,3 +125,5 @@ export const selectFilteredPosts = createSelector(
     return posts;
   }
 );
+
+export const selectError = (state) => state.reddit.error;

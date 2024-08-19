@@ -2,12 +2,17 @@ import React from 'react';
 import './SubredditList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSubreddits } from '../../store/subRedditSlice';
-import { selectSelectedSubreddit, setSelectedSubreddit, fetchPosts } from '../../store/redditSlice';
+import { setSelectedSubreddit, fetchPosts, selectError } from '../../store/redditSlice';
 
 const SubredditList = () => {  // Receive setSelectedSubreddit as a prop
     const dispatch = useDispatch();
     const subreddits = useSelector(selectSubreddits);
     const selectedSubreddit = useSelector(state => state.reddit.selectedSubreddit);
+    const error= useSelector(selectError); 
+
+    if (error) {
+        return <div className="error-message">Unable to load subreddit due to rate limits. Please try again later.</div>;
+    }
 
     return (
         <div className="subreddit-list-container">

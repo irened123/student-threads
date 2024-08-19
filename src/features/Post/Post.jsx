@@ -25,6 +25,11 @@ const Post = ({ post, onToggleComments }) => {
       const response = await fetch(
         `https://www.reddit.com${post.permalink}.json`
       );
+
+      if (response.status === 429) { 
+        throw new Error('You have reached the API rate limit. Please try again later.');
+      }
+
       const json = await response.json();
       console.log("API response:", json);
       // Extract comments from the response, taking only the first 5
@@ -52,7 +57,7 @@ const Post = ({ post, onToggleComments }) => {
     }
 
     if (errorComments) {
-      return <p>Error loading comments.</p>;
+      return <p>Unable to load comments due to rate limits. Please try again later.</p>;
     }
 
     if (showComments && comments.length > 0) {
