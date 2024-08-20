@@ -30,7 +30,7 @@ You can view the live version of the **StudentThreads** application by following
 - **Netlify:** Utilized for the deployment and hosting of the web application, providing a live URL and automatic updates directly from the GitHub repository.
 - **Reddit API:** Used to retrieve and present live data from various subreddits, allowing users to explore and engage with Reddit content directly within the app.
 
-- ## Acknowledgements
+## Acknowledgements
 
 **Inspiration and Guidance:**  
 The inspiration for this project—building a React-Redux application that interacts with the Reddit API—originated from Codecademy's [Full Stack Engineer Career Path](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path). While the project task was part of the portfolio projects offered in the course, the implementation is unique and my own.
