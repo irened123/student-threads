@@ -22,8 +22,9 @@ const PostGrid = () => {
         <div className="post-grid-container">
             {posts.map((post, index) => (
                 <Post 
-                    key={index}
+                    key={`${post.id}-${selectedSubreddit}`} 
                     post={post}
+                    selectedSubreddit={selectedSubreddit}
                 />
             ))}
         </div>

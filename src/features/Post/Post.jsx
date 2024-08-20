@@ -6,7 +6,7 @@ import shortenNumber from "../../utils/shortenNumber";
 import Card from "../../features/Card/Card";
 import Comment from "../Comment/Comment";
 
-const Post = ({ post, onToggleComments }) => {
+const Post = ({ post, selectedSubreddit }) => {
   const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState([]); // To store the fetched comments
   const [loadingComments, setLoadingComments] = useState(false);
@@ -31,17 +31,11 @@ const Post = ({ post, onToggleComments }) => {
       }
 
       const json = await response.json();
-      console.log("API response:", json);
       // Extract comments from the response, taking only the first 5
       const topFiveComments = json[1].data.children
         .slice(0, 5)
         .map((comment) => comment.data);
-      console.log("Top five comments:", topFiveComments);
       setComments(topFiveComments);
-      console.log(
-        "Top five comments:",
-        JSON.stringify(topFiveComments, null, 2)
-      );
     } catch (error) {
       console.error("Failed to load comments:", error);
       setErrorComments(true);
@@ -51,7 +45,6 @@ const Post = ({ post, onToggleComments }) => {
   };
 
   const renderComments = () => {
-    console.log("Rendering these comments:", comments);
     if (loadingComments) {
       return <p>Loading comments...</p>;
     }
@@ -61,7 +54,6 @@ const Post = ({ post, onToggleComments }) => {
     }
 
     if (showComments && comments.length > 0) {
-      console.log("Mapping comments to Comment components");
       return (
         <div className="comments-section">
           <h4>Top Comments</h4>
