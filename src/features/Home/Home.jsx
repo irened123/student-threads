@@ -10,6 +10,9 @@ const Home = () => {
   const { posts, isLoading, error, searchTerm, selectedSubreddit } = useSelector(state => state.reddit);
 
   useEffect(() => {
+  }, []);
+
+  useEffect(() => {
     if (selectedSubreddit) {
       dispatch(fetchPosts(selectedSubreddit));
     }

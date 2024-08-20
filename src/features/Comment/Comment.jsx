@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 import './Comment.css';
 
 const Comment = ({ comment }) => {
-  console.log("Comment data:", comment);
   
   return (
     <div className="comment">
