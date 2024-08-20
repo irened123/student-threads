@@ -33,11 +33,13 @@ You can view the live version of the **StudentThreads** application by following
 ## Acknowledgements
 
 **Inspiration and Guidance:**  
+
 The inspiration for this project—building a React-Redux application that interacts with the Reddit API—originated from Codecademy's [Full Stack Engineer Career Path](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path). While the project task was part of the portfolio projects offered in the course, the implementation is unique and my own.
 
 In building this application, I utilized an example solution to better understand the foundational aspects of Redux and API integration. Some foundational code was adapted from this example, and this project complies with the MIT License. While this resource provided guidance, the final implementation is driven by my own unique work, including significant customizations and enhancements tailored to this specific project.
 
 **Additional Resources:**  
+
 A graphic used in this project was sourced from [Pexels](https://www.pexels.com/), created by Roman Odintsov. While attribution is not required, this contribution was important to the visual design of the application.
 
 
