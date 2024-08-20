@@ -21,7 +21,6 @@ const SubredditList = () => {  // Receive setSelectedSubreddit as a prop
                     key={subreddit.id} 
                     className={`subreddit-link ${selectedSubreddit === subreddit.url ? 'active' : ''}`}
                     onClick={() => {
-                        console.log("clicking button");
                         dispatch(setSelectedSubreddit(subreddit.url));
                         dispatch(fetchPosts(subreddit.url));
                     }} 

@@ -5,6 +5,12 @@
     padding: 20px;
 }
 
+@media (max-width: 768px) {
+    .post-grid-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
 .error-message {
     color: #D8000C; 
     background-color: #FFBABA; 
